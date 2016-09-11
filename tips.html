@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>旅游小贴士——途行</title>
+		<link href="assets/libs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+		<link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/libs/toastr/toastr.min.css" rel="stylesheet">
+		<link href="assets/css/index.css" rel="stylesheet">
+		<link href="assets/css/tips.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="site-wrapper">
+			<div class="site-wrapper-inner">
+				<div class="cover-container">
+					<div class="masthead clearfix">
+						<div class="inner">
+							<h2 class="masthead-brand"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 途行</h2>
+							<nav>
+								<ul class="nav masthead-nav">
+									<li id="signInBtn"><a data-toggle="modal" data-target="#signInModal">登录</a></li>
+									<li id="signUpBtn"><a data-toggle="modal" data-target="#signUpModal">注册</a></li>
+									<li id="signName" style="display: none;"></li>
+									<li id="myPlanBtn" style="display: none;"><a href="planlist.html">我的行程</a></li>
+									<li id="signOutBtn" style="display: none;"><a data-toggle="modal" data-target="#signOutModal">登出</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+
+					<div class="inner cover">
+							<h3 class="text-success">旅游小贴士</h3>
+							<ul class="nav nav-tabs nav-justified" role="tablist">
+								<li role="presentation" class="active"><a href="#tip1" aria-controls="tip1" role="tab" data-toggle="tab">旅程计划</a></li>
+								<li role="presentation"><a href="#tip2" aria-controls="tip2" role="tab" data-toggle="tab">地域旅游</a></li>
+								<li role="presentation"><a href="#tip3" aria-controls="tip3" role="tab" data-toggle="tab">四季出行</a></li>
+								<li role="presentation"><a href="#tip4" aria-controls="tip4" role="tab" data-toggle="tab">出门健康</a></li>
+								<li role="presentation"><a href="#tip5" aria-controls="tip5" role="tab" data-toggle="tab">必备清单</a></li>
+								<li role="presentation"><a href="#tip6" aria-controls="tip6" role="tab" data-toggle="tab">旅游购物</a></li>
+							</ul>
+						<div class="tab-content">
+						 	<div role="tabpanel" class="tab-pane active" id="tip1">
+								<p>1. 计划旅游之前要确定护照、国家签证等主要证件的有效期；大部份国家要求入境护照有效期为6个月或以上。</p>
+
+								<p>2. 出发前最好先收集当地的旅游信息，好好计划行程，这不但可以充分利用宝贵的时间，更可减少意料之外的事情发生。除了可从旅游书中得到当地的旅游信息外，芒果网也有提供有关信息，此外你也可以透过芒果网论坛向其它网友查询。</p>
+
+								<p>3. 出外旅游宜预先购买旅游保险，以降低旅游期间一些难以预计的意外开支及损失。</p>
+
+								<p>4. 出发前根据你要去地方的天气状况准备衣物，尤其是去那些早晚温差大的地区旅行，应准备足够衣物。</p>
+
+								<p>5. 尽管不少酒店有提供个人护理用品如冲凉液、洗头用品、梳、须刨、毛巾、牙刷等，但最好能自携一套，以备不时之需。</p>
+
+								<p>6. 适量的药品是外游必需的，比如止痕膏、蚊怕水、晕浪丸、眼药水、药水胶布、肠胃丸等等。如有长期服用之慢性病药物（如：降血压或降血糖药物），亦应带备同行。</p>
+
+								<p>7. 由于各个国家的电压不同，因此要带备旅行转换插头，方便为手提电话、相机等充电。</p>
+
+								<p>8. 出行前最好能查询两地汇率有否不同，有部分地方，于当地兑换货币汇率比较高，旅客可选择带备少量当地货币，到达后再兑换足够的现金。另外建议旅客带备信用卡前往，以备不时之需。</p>
+
+								<p>9. 出行前必须先查询当地的紧急求助电话号码，以便遇到紧急事故时救助。</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="tip3">
+								<p class="lead">四季出行——春季篇</p>
+								<p><strong>1、春季出游必备装备</strong><br/>
+								（1）随身保暖外套：春游都会遇上低温阴雨、浓雾、强对流天气以及雷电的气候状况，所以注意穿着适当，一定要提前取得旅游当地的气候资料。<br/>
+								（2）雨具：春游最好 随身携带一把小小折叠伞或雨衣。<br/>
+								（3）常规药品：春季潮湿多雨水，蚊虫和细菌特别容易滋生，应尽量避免饮用生水并且预备一些常规的药品。<br/>
+								（4）相机：春天天气比较潮因此拍照后相机的护理也十分重要，千万不要让相机受潮。</p>
+								<p><strong>2、春季出游提防两把“刀”</strong><br/>
+								（1）第一把“刀”——花毒，有些人在花丛前呆久了，会出现头昏脑涨，咽喉肿痛等症状。有些花会释放一种对人体有害的废气，有的花粉含有毒碱，久与花伴会造成慢性中毒。所以春季踏青需防花毒，更不能因好奇而误食了有毒的花果 例如杜鹃 、夜来香等都有毒 。<br/>
+								（2）第二把“刀”——面瘫，春天是易发面瘫的季节，而造成旅游者面瘫的罪魁祸首 就是春风。旅游者长期出门，脸部暴露在风中，极易被风所寒，致使全身经络阻滞 。其实旅游者一改动不动就“迎风而立，逆风飞扬”的习惯 就可万事无忧了。</p>
+								<p><strong>3、春光明媚，勿忘护眼</strong><br/>
+								由于人的眼睛直接暴露于外界，是受日光照射最充分的部位，极易招致紫外线损伤。为了防止日光中紫外线对眼睛的伤害，在室外活动时要尽量戴有色眼镜，或戴有沿帽子，避免直接仰视太阳光，外出旅行时应尽量使用遮阳伞，尽量避免上午10点至下午2点做室外活动，如果必须外出的话应戴有沿帽或太阳镜。 </p>
+								<p><strong>4、春季出游必须注意的小常识</strong><br/>
+								“春困秋乏“，注意休息 ；地表变湿，注意脚下安全；不要在河畔、池边嬉戏，划船注意安全；注意卫生，带一小瓶酒精棉球备擦洗手指。过敏体质， 远离花树、花丛；野炊完毕一定要人走火灭并用土掩埋火种，坚决杜绝火灾发生。</p>
+
+								<p class="lead">四季出行—夏季篇</p>
+								<p><strong>1、高温出游必备装备</strong><br/>
+								（1）浅色服装 <br/>
+								（2）隔热帽：草帽对阳光有折射作用而且行动也比较方便<br/>
+								（3）盐开水：夏日出汗比较多，准备一瓶盐开水可以补充水分消耗,喝水要次多量少。<br/>
+								（4）防暑药物：如人丹、清凉油等，要随身携带以便应付突发状况。<br/>
+								（5）防晒药物（护理品）：晒黑是小事，但是长时间暴晒容易把皮肤灼伤。<br/>
+								（6）姜醋蒜： 容易携带且具有特殊保健作用。</p>
+								<p><strong>2、 夏季旅游晒斑如何防</strong><br/>
+								夏日旅行多海滨游泳和登高揽胜。日晒时间过长，脸部、颈部、手臂和下肢暴露部位的皮肤便会产生日晒斑。如下措施可消晒斑：<br/>
+								（1）要佩戴有色眼镜（太阳镜），衣袖裤腿尽量放长，戴草帽、凉帽、遮阳帽等，避免皮肤受日光的直接强烈照射。<br/>
+								（2）有皮肤裸露部位适当涂搽防晒膏霜。防晒剂能抵 御中波紫外线的照射。<br/>
+								（3）平时注意适当接受日光的照射，坚持多次少量地接受日晒使自己的皮肤颜色加深（皮肤中黑色素形成），而具有吸收紫外线和保护皮肤免受晒伤的作用。<br/>
+								（4）如果旅行中已发生晒斑，症状轻的要避免再次日晒而加重；症状重的可用西瓜皮轻擦患处，有消肿、消炎、止痛的功效。</p>
+								<p><strong>3、夏日海滩游玩自保大法</strong><br/>
+								戏水是许多人夏日消暑的热门活动，除了必须注意防晒还要防止水上活动引起的其他问题。游泳常见的皮肤问题，包括游泳者痒疹、海泳者皮肤疹、水母咬伤、海胆刺伤、移行性幼虫疹等。避免游泳者痒疹及海泳者皮肤疹就是游完泳马上以清水沐浴、彻底清洁皮肤，并用毛巾擦干身体 。水母海胆蜇伤尽量小心地将刺拔除，并就医治疗。 </p>
+								<p><strong>4、夏季出游必须注意的小常识</strong><br/>
+								（1）注意饮食卫生.出门时应少带易变质的食物。旅途中购买食物时，应严加选择。切不可“饥不择食”、暴饮暴食，并要注意营养合理。<br/>
+								（2）注意劳逸结合。合理安排游览与休息时间，应充分利用凉爽的上午和傍晚进行游览活动。<br/>
+								（3）尽量不要使用空调 。夏室内外温差大，使用空调时，有可能造成室内通风不够，加之白天游览后身体疲惫易熟睡，稍不留神，容易患感冒，引起发热，重者还可引起肺炎等并发症。</p>
+
+								<p class="lead">四季出行—秋季篇</p>
+								<p><strong>1、秋季出游必备物品</strong><br/>
+								（1）小型指南针一个，荒野山林中可以让您有明确的方向<br/>
+								（2）外套：选择登山等活动，因为运动量比较大，山顶和山底的一般会有温差，而且山顶的风大，气温变化也大，带件外套防止着凉。<br/>
+								（3）零食：秋日活动一般运动量比较大而且多在野外，备些吃的有备无患。<br/>
+								（4）必备的外伤药，如：创可贴、紫药水、药用酒精棉球、消炎粉等。还可备一丝巾，既防风又可在必要时做绷带使用。 </p>
+								<p><strong>2、秋季出游需要防治的各种疾病</strong><br/>
+								秋季，外出旅游时莫忘预防旅游病。 登山 随着海拔的增高，气压、气温及氧气压将大大降低，凡患有严重心血管疾病、冠心病、心绞痛、严重高血压、低血压、严重心律失常者、急性中耳炎以及怀孕妇女最好不要去高山旅游。 海滨空气湿度大，气候阴冷，加上空气中钠离子含量较高，患有急性风湿病、糖尿病、甲状腺功能亢进、渗出性胸膜炎、心力衰竭者不宜去海边。旅途中还易出现日照中暑症、紫外线辐射病等。所以，要合理安排旅游时间，尽量避免中午时分外出。另外容易过敏的人注意花粉过敏并带些脱敏药物。</p>
+								<p><strong>3、秋游穿衣法则</strong><br/>
+								（1）准备秋游，做好准备，穿衣要把握几个原则：<br/>
+								（2）暖色彩：衣服的色彩直接影响到人们的姿态、情绪和气氛等。<br/>
+								（3）轻便：穿着过厚的衣服和带过重的东西，易给旅游者造成负担。<br/>
+								（4）宽松：紧身衣裤不但防碍关节和肢体活动，而且会摩擦皮肤、压迫皮下组织，有碍血液循环，不利于汗液蒸发，不利于健康。 </p>
+								<p><strong>4、秋季出游必须注意的小常识</strong><br/>
+								（1）秋季空气干燥是传染病的高发期，因此在旅途中一定要注意预防传染病。例如在火车中和公交车内避免和咳嗽的乘客讲话，经常通风换气。 <br/>
+								（2）秋季一般空气干燥，注意护肤。 </p>
+
+								<p class="lead">四季出游—冬季篇</p>
+								<p><strong>1、冬季出游必备物品</strong><br/>
+								（1）防寒衣<br/>
+								（2）防冻膏和冻疮膏：一定要注意防冻所以防冻膏是必须要准备的。<br/>
+								（3）不怕凉的食物：不要饥饿和疲劳在寒冷的野外中旅行，因为疲劳饥饿时身体就会变得衰弱，这时候最容易发生全身冻伤。</p>
+								<p><strong>2、冬季出行，注意保暖</strong><br/>
+								准备要出游的朋友可以参照如下几点。<br/>
+								（1）应该选择防风性的外套，如呢绒，毛皮和皮革制的衣服。羽绒服可形成不对流的空气层保暖性好，是冬季出游的首选。内衣要柔软、吸湿、透气 ，以利保温、干燥。<br/>
+								（2）尽量减少皮肤裸露地方，对于容易生冻疮的地方必须经常摩擦和活动。风雪天外游一定要带手套和耳套<br/>
+								（3）应该注意饮食的搭配。瘦肉类、蛋类、鲜鱼、豆制品、动物肝脏对补充人体热量很有好处，可适当多食用。　<br/>
+								（4）适量运动。 多从事登山，滑雪，打雪仗，堆雪人，冰上运动等冬季运动 。特别提醒患有冠心病、高血压和慢性支气管炎的朋友不宜在冬季出游，尤其遇到风雪天更要忌讳以免病情加重。</p>
+								<p><strong>3、雪地之中注意保护视力</strong><br/>
+								白茫茫的雪地对紫外线的吸收较少，反射性强。当强烈的紫外线射入雪地或旅行者的眼中后会发生光化作用，经过七到八个小时的潜伏期，眼睛就会出现严重的微光，流泪，有异物感眼睛不能睁开，有强烈的灼伤感，剧烈疼痛。医学上称为“雪盲”，又称太阳性眼盲以及紫外线角膜炎。雪地旅行可带墨镜防止雪盲，旅行中治疗雪盲可以用人乳，鲜牛奶频繁的滴眼。</p>
+								<p><strong>4、冬季出游必须注意的小常识</strong><br/>
+								（1）酒精取暖的观点是错误的。酒精和水不能产热，相反，酒精能刺激体表的血管，使体表血液循环增加，人感到“发热”，实际上人体在丢失热量。<br/>
+								（2）冬天的白天比较短，安排行程要注意时间。尽量避开早上和晚上进行户外活动而选择气温相对较高的9：00—4：00<br/>
+								（3）鞋子、车子轮胎一定要注意防滑 。</p>
+						 	</div>
+						 	<div role="tabpanel" class="tab-pane" id="tip2">
+								<p class="lead">国内旅游篇</p>
+								<p><strong>1、西部旅游</strong></p>
+								<p>（1）吃：往西而行少数民族饮食文化愈见愈浓，少数民族地区饮食多以牛羊为主，要自己注意调节且尊重少数民族习惯。<br/>
+								（2）穿:我国地势分三阶梯越往西走海拔越高。像天池、南山、喀纳斯湖，因海拔较高、气候多变，日夜温差较大，七、八月份也要带上一件毛衣和厚外套。<br/>
+								（3）住：丝绸之路某些特殊路段的景点完全受天气因素的影响，沿途住宿条件较艰苦，游客须有充分心理准备。<br/>
+								其他：西部地区多气候干燥，紫外线比较强烈需要自备润唇膏、防晒霜、太阳帽、 太阳镜。特别需要注意西部地广人稀，景点有时地处荒芜之处，勿忘随身携带足够多的胶卷和必备药品、雨具等野外旅游工具。</p>
+								<p><strong>2、东部旅游</strong></p>
+								<p>（1）吃：东部物产非常丰富，食物的烹饪方式也五花八门。切忌吃东西暴饮暴食，吃好吃的东西要少量多次才能品出味道来。东部临海且海鲜，但是很多人对海鲜过敏，一定要注意。<br/>
+								（2）穿：愈往东气候越温和，气温也会相对稳定。但是仍然要注意穿衣服尽量多层穿，热了可以脱，冷了可以随时加。<br/>
+								（3）住：东部人口的密集高，因此住宿的舒适度一般是很高的，在大多数景点附近就可以解决住宿的问题，但是一定要结合自己的旅游预算情况选择适合自己的方案。
+								其他：需要注意的是气候越来越适合生物生长，虫蚁也会越来越猖獗。尤其江南多毒物，户外旅游一定要小心。</p>
+								<p><strong>3、南方旅游</strong></p>
+								<p>（1）吃：自北而来的游客一定要品尝一下南方特色食品。南方的暑天特多水果，吃水果是南游的一大特色。但注意吃量勿过度，小心腐变的生果和饭菜，留意饮料的有效期。<br/>
+								（2）穿：我国横跨纬度比较大，从北方的冰天雪地一下到达南国的花都，衣服一定要注意时令，主要是目的地的天气，一定要事先查询，做两手准备。6-10月是南方地区最炎热的时候，穿戴以"白、透、露、爽"装为宜，另外一定要带雨具。<br/>
+								（3）住：盛夏在南方地区一定要避暑，但是夜睡也需小被单轻盖腹脐处，南方的暑天无论室内室外，都容易发生"热伤风"感冒；在海南等沿海地区，白天炎热，但深夜又特凉，故需备好被单夜盖。</p>
+								<p><strong>4、北方旅游</strong></p>
+								<p>（1）吃：北国食物量大味重有其独特的魅力。但是吃东西一定要量力而行，并不是所有习惯清淡的南国人都能受得了北国厚重的口味。<br/>
+								（2）穿：冬季去北方感受雪国魅力，防寒是必须，羽绒服、保暖内衣是必备品。夏日北方避暑也要注意带件稍微厚点的衣服，以防夜间凉。<br/>
+								（3）住：只是冬日到了北方，取暖是重中之重，没有取暖设备的房子是不能住的。</p>
+
+								<p class="lead">国际旅游篇</p>
+								<p>出国旅游因为所去的目的地不同需要注意的东西不尽相同，此处只把出国需要注意的小常识列举一下。</p>
+								<p>（1）出国旅游，注射疫苗不可少。为避免各种传染疾病，旅游前可参考旅游地点的环境，于出发前施打必要的预防针，如：流感疫苗、A型及B型肝炎疫苗、破伤风、白喉等疫苗，以及服用防疟药物等，以避免传染疾病。 <br/>
+								（2）做好充足的准备工作。了解目的地的货币、语言、天气，当地的基本情况是必须掌握的。旅客可以通过上网查询。另外旅客一定要掌握当地的环境卫生和疫情资料备好充足的物品以备不时之需。<br/>
+								（3）了解当地风俗。毕竟不同种族不同文化，了解别人的风俗是必须的，一不小心犯了别人的禁忌会遭遇无法预料的尴尬。像泰国小孩的头摸不得，印度的小孩您抱不得。在新加坡街头随地吐痰、乱扔废物，高额的罚款会让你脑袋大一圈。<br/>
+								（4）到达目的地后， 如有时差，多晒晒太阳可缓解一下时差。<br/>
+								（5）到饭店拿张卡片 。到一个陌生的地方难免会遇到语言不同、道路不熟的尴尬。如果迷路而又语言不同时有一张饭店的卡片你就万事ok了。<br/>
+								（6）身上带钱要适量。在国外单独上街，身上不要带太多现金，商场购物可以刷卡。<br/>
+								（7）随身携带护照。在国外护照就像是你的身份证，只要行动一定要带证件在身上，一来备警察的抽查，二来在一些场合需要你出示身份证明。</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="tip4">
+								<p class="lead">旅游急救小常识</p>
+								<p>到外地旅游，人地生疏，如遇突发的身体毛病往往会手足无措，以下是比较常见的症状及其急救方法，在得到正式诊治前可以应用。</p>
+								<p>
+								　　心脏病： 曾接受治疗师治疗并有处方者，协助其服用该药物。未经治疗者，设法求医，但不要私自运送病人。昏迷时平躺时，抬高双脚，若呼吸急促须抬高头部、胸部，必要时心脏按摩或人工呼吸。 <br/>
+								　　中风： 立刻求医，但未经医师指示，不要移动病人或给予任何饮食。令病人平卧，若呼吸困难，将脸偏向一侧使口中分泌物流出。 <br/>
+								　　中暑： 将患者移至阴凉处躺下，头部稍高，解除束缚衣物，并用一切可能的方法为患者降温。例如用冷水为患者擦身，使其体温降至摄氏38度为止，再送医院治疗。 <br/>
+								　　外伤：少量出血可用直接加压法，严重出血应用止血带（宽布条）置伤口上方绕圈后打结，将木棒置于两结间旋紧至止血后固定木棒，紧急送医，每间隔十五—二十分钟应松开十五秒；如头部受伤，不可动摇，使患者平卧，头部垫高，脸偏向一侧，冷敷头部及颈部，迅速送医治疗。 <br/>
+								　　骨折： 伤者安卧，不使折断处用力，先予止血，注意痛极休克。将伤者用木板托好并用绷带固定（若骨骼已突出不要推）后，紧急送医诊治。 <br/>
+								　　烫伤： 立刻用水冲洗或浸入干净冷水中，轻者以凡士林涂抹患处，或干净布料敷盖（不要弄破水泡）送医诊治。严重者以干净衣物被单、毛毯包裹，紧急送医。 <br/>
+								　　休克： 使患者平躺，头低脚高，以保持患者脑部血液供应，唯呼吸困难者，则需把患者头部垫高。另外，应为患者保持温暖，以防失温，并且尽快送医诊治。 <br/>
+								　　触电： 先使绝缘、切断电源、解开伤者的衣物但须防受凉，施以人工呼吸。<br/> 
+								　　溺水： 救出水面，清除患者口中异物，使患者腹中之水吐出，并且应为溺水者保持体温。必要时人工呼吸、心脏按摩、紧急送医。 <br/>
+								　　食物中毒： 先服用浓食盐水使其全部吐出，速送医诊治。 <br/>
+								　　毒蛇咬伤： 包扎伤口上部，洗净伤口，用清洁刀片切开创口挤出毒液或用口吸出（口内须无破损）紧急送医急诊。 <br/>
+								　　虫入耳： 将耳向亮处或将甘油、缝纫机油滴入耳中，虫自然爬出。 <br/>
+								　　物入眼： 如打开眼皮可见，用干净手帕轻轻拭去，不可揉擦眼睛；如物不能见，可用食盐水冲洗，如无法去除，即赴眼科请医生诊治。</p>
+
+								<p class="lead">预防“旅游病”</p>
+								<p>旅游常遇水土不服，往往令人扫兴。因此，外游时应该格外注意自己身体的变化，并且采取适当的预防措施。</p>
+								<p><strong>（1）腹泻 </strong></br>
+								　　外出时，由于地理环境、气候、饮用水硬度以及饮食的变化，很容易因为水土不服而引发腹泻。腹泻会使人体内流失水分及电解质，可能引起虚脱乏力、抽搐、发烧等并发症，不可掉以轻心。</br> 
+								　　预防腹泻最有效的方法就是在旅途中多喝一些乳酸类饮料，比如酸奶。每天坚持饮用1到2支，如果不是发生食物不洁等特殊情况，基本上不太可能腹泻了。如遇腹泻，患者千万不要滥用抗生素来治疗腹泻，否则会对身体造成更大的伤害。 </p>
+								<p><strong>（2）失眠</strong></br>
+								　　有些人在旅程中会出现失眠现象。原因之一是初到新地入睡环境改变、噪音影响、光感和气味变化导致入睡困难；原因之二是过度兴奋、疲劳或者由慢性病引发的不适影响睡眠。 </br>
+								　　要克服旅游失眠，首先应保持情绪愉快，尽可能保持平时饮食、起居、睡眠等习惯，每到一处新地方应尽快适应当地的气候环境，克服生疏感。如果条件允许，出行时最好带上一两件日常陪伴自己睡眠的东西，比如抱枕、布娃娃或者放在枕边滴滴答答走个不停的闹钟。 </p>
+								<p><strong>（3）晕车晕船 </strong></br>
+								　　造成晕车晕船的原因，主要在于车船的直线变速运动、颠簸、摆动或旋转时造成部分神经系统非常敏感的人的身体局部功能紊乱，这种情况多见于体质虚弱者，以女性为多。睡眠不足、饮食不当、精神紧张、某种气味的不良刺激，均可诱发或加重症状。</br>
+								　　防治晕车晕船，首先要保证睡眠充足，饮食宜清淡，不要过饥或过饱，不要喝酒，同时要保持良好的精神状态。晕车晕船时，患者最好平卧休息。如无条件平卧，可将头靠在椅背上，闭目休息，最好能换坐在近窗的位置上，空气清新有利于缓解、减轻症状；同时，可用清凉油或风油精等涂擦头额部位，或在肚脐上直接贴上伤湿止痛膏。 </p>
+								<p><strong>（4）高山反应 </strong></br>
+								　　如到海拔较高的地方旅游，由于气压降低、空气稀薄，外游人士很容易会出现高山反应。征状为呕吐、耳鸣、头痛、发烧，严重者会出现感觉迟钝、情绪不宁、产生幻觉等，也可能产生浮肿、休克或痉挛等症状。 </br>
+								　 为预防高山反应，在海拔高的地方不宜动作太迅速，最好步调平稳并配合呼吸，且避免急促的呼吸。编排行程不宜太紧迫，睡眠、饮食要充足正常，经常性地作短时间的休息，休息时可作柔软操及深呼吸来强化循环功能及高度适应，平常应多作体能训练以加强摄氧功能。</p>
+								<p><strong>（5）飞行不适</strong></br>
+								　　乘飞机最常发生的疾病便是航空性中耳炎，旅客若感到中耳不适时，可做打哈欠或吞咽的动作；若觉有欠雅观，可含几颗糖果或是嚼口香糖，航空公司所发给旅客的花生米也可解决此问题。</br>
+								　　坐飞机时，因为飞机的机舱不大，有的时候更要坐上数个钟头，如旅客血液循环不好往往会造成血液聚积在下肢无法回流，更有可能会肩颈酸痛。旅客应多喝水或流质饮品，藉此稀释血液，避免喝咖啡、茶及酒，因这些都属于利尿饮料，易引致身体脱水。另建议每小时在客舱座位中每小时活动腿部三至四分钟，以及利用轮候洗手间时做些伸展四肢的运动，帮助血液循环。此外，旅客亦应避免穿着尖头或高跟鞋，尽量穿紧身袜子和松阔的鞋子，以避免腿部血液栓塞。</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="tip5">
+								<p><strong>1、背包</strong></br>
+								如果你打算做一个背包族，那你首先需要一个背包。买一个好包是值得的，这样你就可以避免在旅途中落入在野地或者坎坷的街道上拖着包，嘴里还不断骂骂咧咧的悲催境地。</br>
+								准备你的行李时，你可以有三种选择：旅行包，带顶袋的背包以及袋轮的包。买一个质量好的包，你可以不断地使用它。</br>
+								一般来讲，你背包的物品可以分为以下8类：</br>
+								安全，睡眠，饮食，卫生，健康，旅行必备品，衣物，鞋类</p>
+								<p><strong>2、小背包和挎包</strong></br>
+								如果你已经到达目的地并且安顿下来，那么你就不需要再随身背着背包了，装一些必备物品</br>
+								例如：旅游指南，照相机，地图，水瓶，医药包和太阳镜等。</br>
+								如果你不是一个很专业的徒步旅行者，那么一个可折叠的，轻一点的随身小包可能更适合你</br>
+								还有，随身小包也可以作为乘飞机时随身携带的手提包</br>
+								当然，外出旅行时也可以选择带一个挎包。挎包有一个主要的好处，就是取东西很方便，</br>
+								不像双肩背包，每次你想看旅游指南或者拍照时都需要取下来，实在麻烦。有时候挎包也更安全，因为双肩背包在你后面无法看到，很容易划开而你一无所知包里装什么</p>
+								<p><strong>3、防盗钱包</strong></br>
+								这是携带信用卡，现金，护照，票和其他重要物品最安全的方法</br>
+								这个钱袋你无论穿什么衣服，都可以把他穿在里面，通常而言，</br>
+								这个钱袋会围在你的腰上或者挂在脖子上。但是这两种方式都会使你很难拿到钱，</br>
+								所以不要把你的零用钱放进去。</br>
+								钱袋的质地也很重要，棉的最好，又可以洗，还很舒服。最好把票，护照</br>
+								和其他文件用塑料袋子包好在放进棉布钱袋中，</br>
+								否则你的汗水可能毁坏这种物品</p>
+								<p><strong>4、挂锁和链条锁</strong></br>
+								一把锁不但可以保护你的包，还可以用来锁紧旅社的门。</p>
+								<p><strong>5、防水袋</strong></br>
+								要记得带一个防水袋装文件和钱，这样你可以在游泳或潜水的时候也随身带上这些贵重物品</p>
+								<p><strong>6、枕头</strong></br>
+								充气枕头很好，携带也比较方便，如果没有带枕头，那么至少要带一个枕套，可以在坏境恶劣的不卫生的旅馆中使用。</p>
+								<p><strong>7、睡袋</strong></br>
+								如果你要独立旅行，并且游历很多地方，那就很有必要袋，一个很轻的睡袋，可以减少你旅途中不少的负重。</p>
+								<p><strong>8、手电</strong></br>
+								晚上在旅馆里找东西时候需要一把手电，为了避免夜晚，外出回宾馆，停电的时候需要一把</p>
+								<p><strong>9、杯子和勺子</strong></br>
+								虽然你不可能带上炊具，但是带上杯子和勺子重要可以避免感染或者传播疾病</p>
+								<p><strong>10、水壶</strong></br>
+								可以买个硅胶类的折叠水壶不用的时候可以折叠起来，也不会占很大的空间</p>
+								<p><strong>11、医药包</strong></br>
+								出门在外难免会得腹泻等常见疾病，所以要带好医药包</br>
+								旅行需要携带的药品：</br>
+								止泻药</br>
+								抗真菌药膏</br>
+								治疗擦伤和挫伤的抗菌药膏</br>
+								止痛片</br>
+								治疗晒伤的或者芦荟制品</br>
+								咳嗽药和感冒药</br>
+								眼药水</br>
+								消化不良的药品</br>
+								驱虫药膏或喷剂</br>
+								通便药</br>
+								净水药片或者纯水过滤</br>
+								防晒物品</br>
+								绷带和纱布</br>
+								剪刀，安全别针和镊子</br>
+								旅游时，在你的随身包裹中，放入含下列信息的文件</br>
+								血型</br>
+								你个人的身体状况</br>
+								你平时经常服用的药品和处方复印件</br>
+								对什么类型药物过敏</p>
+								<p><strong>12、洗漱用品</strong></br>
+								大多数洗漱用品到处都可以买到，但是你还是要随身带一些</p>
+								<p><strong>13、毛巾</strong></br>
+								棉质的毛巾会占据你背包中很大的空间，也很难干，建议买纤维材质的速干毛巾</p>
+								<p><strong>14、晾衣绳</strong></br>
+								一条普通的绳子，可以给你在旅途中带来不少的便携</p>
+								<p><strong>15、湿纸巾</strong></br>
+								在干净水短缺的情况下这些物品会带来方便（特别是在街边货旅途中吃饭的时候）</p>
+								<p><strong>16、地址薄和笔</strong></br>
+								能及时处理手机不小心遗失后忘记号码的备忘录</p>
+								<p><strong>17、电池</strong></br>
+								出发前给所有需要电池的电器换上新电池，并配上备用电池</p>
+								<p><strong>18、耳塞</strong></br>
+								如果你会在城市中呆上很长时间或者在刺耳音响的公交车上做十个小时，那么你一定不要忘了一堆耳塞</p>
+								<p><strong>19、眼镜</strong></br>
+								带上眼睛（放在眼睛盒里）和隐形眼睛。戴太阳镜不但可以保证舒适还可以保护眼睛。</p>
+								<p><strong>20、电工胶布</strong></br>
+								你的帐篷出现一个洞？你的背包是否需要修补？这种情况以及很多意想不到的情况下，电工胶布可能救你一命。</p>
+								<p><strong>21、旅行指南，地图和词汇</strong></br>
+								这些对于你在目的国阅读和做计划很重要</p>
+								<p><strong>22、随身小折刀</strong></br>
+								一把瑞士军刀上有很多用的工具，剪刀，瓶起子罐头起子和直刀，以及其他工具，记住做飞机时不要把刀放在随身携带的包里，否则会被没收</p>
+								<p><strong>23、针线包</strong></br>
+								放针，线，一些纽扣以及用来缝衣服，帐篷</p>
+								<p><strong>24、防暑服装</strong></br>
+								如果你是在高温下旅游，需要预备一件轻而宽松的衣服。棉质的衣服吸汗，而且洗完以后很容易干。带几件长袖的衣服，因为它们可以防晒和防蚊，而且适合在宗教地区穿着</p>
+								<p><strong>25、保暖服装</strong></br>
+								多穿几层衣服，外面套一件质地好的夹克，会给你更多灵活性。对于新手，需要带几件保暖内衣，如果你在严寒中旅行，那么就要考虑买登山冲锋衣了，不要忘了，带手套和帽子</p>
+								<p><strong>26、防水雨披</strong></br>
+								无论你去的地方是热还是冷，你需要带一件雨披，你可以用它来遮住自己以及包</p>
+								<p><strong>27、靴子/</strong></br>
+								一双不防水的鞋要比防水的好（除非你到了非常寒冷的地方），因为它能让你的脚更好的换气。一双好的运动凉鞋和适合温暖的气候穿，在洗澡的时候，下海游泳的时都可以穿</br>
+								，而且穿在脚上就能自然干。</p>
+								<p><strong>28、书</strong></br>
+								一本好的书，有助于打发等火车飞机漫长的时间</p>
+								<p><strong>29、礼物</strong></br>
+								如果要住当地人家里，那你最好带几件礼物</p>
+								<p><strong>30、旅游保险</strong></br>
+								一份旅游保险，可以让你的旅行中出现的意外，损失到最轻，更是自己旅途中的保障和负责</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="tip6">
+								<p><strong>1、货币的换算</strong><br/>
+								　 国外购物应注意标价是美元或当地货币，且严防买到冒牌货。购物以实用、需要为购物之考虑，避免大肆采购，以免回国入境时被海关扣税。</p>
+
+								<p><strong>2、免税节税</strong><br/>
+								　 购物保留收据。某些国家购买一定金额以上物品时，可获免税或退税优待。笨重及大型物品，可请店方代为邮寄或货运。</p>
+
+								<p><strong>3、景区商品慎重买</strong><br/>
+								　 在旅游中尽量少买东西，旅游区一般物价较高，而且买了东西还不便旅行。根据笔者多年的经验，一些旅游区针对顾客流动性大的特点，出售的贵重物品时有假冒商品，而真正体现该地区人文、历史风情的物品，未必会在景区里出售。此外，旅途中必备的物品，如胶卷等最好提前准备好，免得临时抱佛脚，买了质次价高的物件。</p>
+
+								<p><strong>4、小心利诱游说手法 </strong><br/>
+								　 请小心个别不良商店采用利诱手法促销，此种不诚实的销售手段，目的是游说消费者改变购买决定，改买该店推销的其它货品 ，从而获取利益。为保障自己，宜选择明码实价的商店，并先行比较市场价格、了解商品特点、查明售价包括的配件，再检查商品完整无缺，方才购买。</p>
+
+								<p><strong>5、带备信用卡购物</strong><br/>
+								　 不少的购物点都接纳信用卡付款，旅客可带信用卡以作不时之需。如在外地遗失卡片，请直接致电发卡行作报失。旅程完结后，再办理有关书面手续。</p>
+							</div>
+						</div>
+					<div class="mastfoot">
+						<div class="inner">
+							<p>Author: Wang Juan, Github Address: <a href="https://github.com/micky-wj/travelPlan">micky-wj@travelPlan</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-primary">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="signInModalLabel">登录</h4>
+					</div>
+					<div class="modal-body">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<label for="username" class="control-label col-sm-4">用户名:</label>
+								<div class="col-sm-5">
+									<input class="form-control" id="username" data-param="username">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="control-label col-sm-4">密码:</label>
+								<div class="col-sm-5">
+									<input class="form-control" type="password" id="password" data-param="password">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="verifycode" class="control-label col-sm-4">验证码:</label>
+								<div class="col-sm-4">
+									<input class="form-control" id="verifycode" data-param="verifycode">
+								</div>
+								<div class="col-sm-4">
+									<img style="-webkit-user-select: none" src="">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<div class="col-sm-8">
+							<div id="errorinfo" class="text-danger text-center"></div>
+						</div>
+						<div class="col-sm-4">
+							<button type="button" class="btn btn-primary" data-node="confirm">登录</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-success">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="signUpModalLabel">注册</h4>
+					</div>
+					<div class="modal-body">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<label for="username" class="control-label col-sm-4">用户名:</label>
+								<div class="col-sm-5">
+									<input class="form-control" id="username" data-param="username" title="必填。长度3~10位，只能由字母、下划线和数字组成，必须以字母开头。">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="control-label col-sm-4">密码:</label>
+								<div class="col-sm-5">
+									<input class="form-control" type="password" id="password" data-param="password" title="必填。长度8~16位，数字、字母、字符至少包含两种。">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password-confirm" class="control-label col-sm-4">确认密码:</label>
+								<div class="col-sm-5">
+									<input class="form-control" type="password" id="password-confirm" data-param="password-confirm" title="必填。请确保两次密码输入相同。">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<div class="col-sm-8">
+							<div id="errorinfo" class="text-danger text-center"></div>
+						</div>
+						<div class="col-sm-4">
+							<button type="button" class="btn btn-success" data-node="confirm">注册</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutModalLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-warning">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="signOutModalLabel">退出登录</h4>
+					</div>
+					<div class="modal-body">
+						您确认退出登录吗？
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-warning" data-node="confirm">退出</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="assets/libs/jquery-ui/external/jquery/jquery.js"></script>
+		<script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/libs/jquery-ui/jquery-ui.min.js"></script>
+		<script src="assets/libs/toastr/toastr.min.js"></script>
+		<script src="assets/js/index.js"></script>
+	</body>
+</html>

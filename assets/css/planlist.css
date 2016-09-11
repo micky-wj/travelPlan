@@ -1,0 +1,159 @@
+.site-wrapper-inner {
+  vertical-align: top;
+}
+.masthead {
+  position: static!important;
+}
+.mastfoot {
+  position: static!important;
+}
+.cover {
+	margin: 20px;
+	padding: 0px;
+	border: 10px solid #fff;
+  border-radius: 10px;
+	background-color: #fff;
+}
+.table {
+  text-align: left;
+  font-family: '微软雅黑';
+  font-size: 1.1em;
+  color: #333;
+  text-shadow: none;
+  line-height: 1.6em;
+}
+.planlist-none {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #080808;
+  margin-bottom: 10px;
+}
+#getPlanModal .panel-heading {
+  text-align: center;
+  font-weight: bold;
+}
+#getPlanModal .panel-body dl{
+  margin-bottom: 0px;
+}
+#getPlanModal .panel-body dt{
+  margin-bottom: 5px;
+}
+#getPlanModal .panel-body dd{
+  margin-left: 10px;
+}
+#getPlanModal .panel-body dd+dt{
+  margin-top: 10px;
+}
+#planlistTable {
+  display:flex;
+  justify-content:space-around;
+  align-items:  center;
+  flex-wrap: wrap;
+  margin:0 auto;
+  width: 100%;
+  text-align: center;
+  font-family: '微软雅黑';
+  font-size: 1.1em;
+}
+
+#planlistTable .plan {
+  position: relative;
+  margin: 20px 5px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 250px;
+  background: #fff;
+  color: #333;
+  -moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+  transition:all .5s;
+} 
+#planlistTable .plan:hover {
+  box-shadow: 0 0 20px #ccc;
+}
+#planlistTable .name {
+  position: relative;
+  font-size: 22px;
+  line-height: 60px;
+  font-weight: bold;
+  margin: -20px -20px 20px -20px;
+  border-bottom: 8px solid;
+  background-color: #eee;
+  text-shadow: none;
+  background-image: -moz-linear-gradient(#fff,#eee);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    
+  background-image: -webkit-linear-gradient(#fff, #eee);
+  background-image: -o-linear-gradient(#fff, #eee);
+  background-image: -ms-linear-gradient(#fff, #eee);
+  background-image: linear-gradient(#fff, #eee);
+  transition:all .25s ease .25s;
+}
+#planlistTable .name:after {
+  position: absolute;
+  bottom: -8px; left: 0;
+  height: 3px; width: 100%;
+  content: '';
+  background-image: url(../imgs/planlist_name_bar.png);
+}
+
+#planlistTable .plan:hover .name {
+   transform: scale(1.1,1.1);
+}
+
+#planlistTable .plan .name{
+  color: #5291B6;
+  border-bottom-color: #417FAA;
+}
+
+#planlistTable .day{
+  font-size: 38px;
+}
+
+#planlistTable .city{
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #999;
+}
+  
+#planlistTable .plan a {
+  position: relative;
+  margin: 3px;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;       
+  background-color: #72ce3f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;     
+  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+  opacity: .9;
+  cursor: pointer;       
+}
+
+#planlistTable .plan a:hover {
+  opacity: 1;       
+}
+
+#planlistTable .plan a:active {
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
+  box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;       
+}     
+
+#planlistTable .plan a:nth-child(4n+1){
+  background: #00BCD4;
+}
+
+#planlistTable .plan a:nth-child(4n+2){
+  background: #B3E03F;
+}
+
+#planlistTable .plan a:nth-child(4n+3){
+  background: #3AD5A0;
+}
+
+#planlistTable .plan a:nth-child(4n+4){
+  background: #9E9E9E;
+}

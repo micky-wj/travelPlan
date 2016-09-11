@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>途行——旅行规划助手</title>
+	    <link href="assets/libs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="assets/libs/toastr/toastr.min.css" rel="stylesheet">
+	    <link href="assets/css/index.css" rel="stylesheet">
+	    <!--[if lt IE 9]>
+	      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+  	</head>
+  	<body>
+    	<div class="site-wrapper">
+      		<div class="site-wrapper-inner">
+        		<div class="cover-container">
+         			<div class="masthead clearfix">
+			            <div class="inner">
+			              	<h2 class="masthead-brand"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 途行</h2>
+		                	<ul class="masthead-nav nav">
+			                  	<li id="signInBtn"><a data-toggle="modal" data-target="#signInModal">登录</a></li>
+			                  	<li id="signUpBtn"><a data-toggle="modal" data-target="#signUpModal">注册</a></li>
+			                  	<li id="signName" style="display: none;">wang</li>
+			                  	<li id="myPlanBtn" style="display: none;"><a href="planlist.html">我的行程</a></li>
+			                  	<li id="signOutBtn" style="display: none;"><a data-toggle="modal" data-target="#signOutModal">登出</a></li>
+		                	</ul>
+			            </div>
+			        </div>
+          			<div class="cover inner">
+            			<h1 class="cover-heading">创建你的行程</h1>
+			            <p class="lead">站在地图中间，深入其境地制定路线，做出最优的旅行计划！</p>
+			            <p class="lead">
+			              	<a id="creatBaseBtn" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#creatBaseModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"> 新建</span></a>
+			              	 | 
+			              	<a href="tips.html" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-tag" aria-hidden="true"> 小贴士</span></a>
+			            </p>
+          			</div>
+
+         			<div class="mastfoot">
+			            <div class="inner">
+			              <p>Author: Wang Juan, Github Address: <a href="https://github.com/micky-wj/travelPlan">micky-wj@travelPlan</a>.</p>
+			            </div>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
+      		<div class="modal-dialog">
+            <div class="modal-content">
+              	<div class="modal-header bg-primary">
+                	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                	<h4 class="modal-title" id="signInModalLabel">登录</h4>
+              	</div>
+              	<div class="modal-body">
+                	<form role="form" class="form-horizontal">
+                  		<div class="form-group">
+                    		<label for="username" class="control-label col-sm-4">用户名:</label>
+                   			<div class="col-sm-5">
+                      			<input class="form-control" id="username" data-param="username">
+                    		</div>
+                  		</div>
+                  		<div class="form-group">
+                    		<label for="password" class="control-label col-sm-4">密码:</label>
+                    		<div class="col-sm-5">
+                      			<input class="form-control" type="password" id="password" data-param="password">
+                    		</div>
+                  		</div>
+		                <div class="form-group">
+		                    <label for="verifycode" class="control-label col-sm-4">验证码:</label>
+		                    <div class="col-sm-4">
+		                      	<input class="form-control" id="verifycode" data-param="verifycode">
+		                    </div>
+		                    <div class="col-sm-4">
+                      			<img style="-webkit-user-select: none" src="">
+                    		</div>
+		                </div>
+                	</form>
+              	</div>
+              	<div class="modal-footer">
+                    <div class="col-sm-8">
+                        <div id="errorinfo" class="text-danger text-center"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary" data-node="confirm">登录</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+             	</div>
+            </div>
+          </div>
+        </div>
+    	<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel">
+     		<div class="modal-dialog">
+        		<div class="modal-content">
+          			<div class="modal-header bg-success">
+            			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            			<h4 class="modal-title" id="signUpModalLabel">注册</h4>
+          			</div>
+			        <div class="modal-body">
+			            <form role="form" class="form-horizontal">
+			              	<div class="form-group">
+			                	<label for="username" class="control-label col-sm-4">用户名:</label>
+			                	<div class="col-sm-5">
+			                  		<input class="form-control" id="username" data-param="username" title="必填。长度3~10位，只能由字母、下划线和数字组成，必须以字母开头。">
+			                	</div>
+			              	</div>
+			              	<div class="form-group">
+			                	<label for="password" class="control-label col-sm-4">密码:</label>
+			                	<div class="col-sm-5">
+			                  		<input class="form-control" type="password" id="password" data-param="password" title="必填。长度8~16位，数字、字母、字符至少包含两种。">
+			                	</div>
+			              	</div>
+			              	<div class="form-group">
+			                	<label for="password-confirm" class="control-label col-sm-4">确认密码:</label>
+			                	<div class="col-sm-5">
+			                  		<input class="form-control" type="password" id="password-confirm" data-param="password-confirm" title="必填。请确保两次密码输入相同。">
+			                	</div>
+			              	</div>
+			            </form>
+			        </div>
+			        <div class="modal-footer">
+                        <div class="col-sm-8">
+                            <div id="errorinfo" class="text-danger text-center"></div>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-success" data-node="confirm">注册</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+			        </div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutModalLabel">
+      		<div class="modal-dialog">
+        		<div class="modal-content">
+          			<div class="modal-header bg-warning">
+            			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            			<h4 class="modal-title" id="signOutModalLabel">退出登录</h4>
+          			</div>
+	          		<div class="modal-body">
+	            		您确认退出登录吗？
+	          		</div>
+			        <div class="modal-footer">
+			            <button type="button" class="btn btn-warning" data-node="confirm">退出</button>
+			            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			        </div>
+        		</div>
+      		</div>
+    	</div>
+    	<div class="modal fade" id="creatBaseModal" tabindex="-1" role="dialog" aria-labelledby="creatBaseLabel">
+     		<div class="modal-dialog">
+        		<div class="modal-content">
+          			<div class="modal-header bg-info">
+            			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            			<h4 class="modal-title" id="creatBaseLabel">行程计划基本信息</h4>
+          			</div>
+			        <div class="modal-body">
+			            <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="planname" class="control-label col-sm-3">计划名称:</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" id="planname" data-param="planname" title="必填。计划名称不能含特殊字符，且不能超过20位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="planday" class="control-label col-sm-3">计划天数:</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" id="planday" type="number" max="10" min="1" value="2" data-param="planday">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="plancity" class="control-label col-sm-3">计划城市:</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" id="planpro" data-param="planpro"></select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-control" id="plancity" data-param="plancity"></select>
+                                </div>
+                            </div>
+                        </form>
+			        </div>
+			        <div class="modal-footer">
+                        <div class="col-sm-8">
+                            <div id="errorinfo" class="text-danger text-center"></div>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-info" data-node="confirm">下一步</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+			        </div>
+        		</div>
+      		</div>
+    	</div>
+	    <script src="assets/libs/jquery-ui/external/jquery/jquery.js"></script>
+	    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/libs/jquery-ui/jquery-ui.min.js"></script>
+	    <script src="assets/libs/toastr/toastr.min.js"></script>
+	    <script src="assets/js/index.js"></script>
+  	</body>
+</html>

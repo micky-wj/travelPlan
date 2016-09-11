@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>旅游小贴士——途行</title>
+	<link href="assets/libs/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+	<link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/libs/toastr/toastr.min.css" rel="stylesheet">
+	<link href="assets/css/plandetail.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<title>编辑行程详细信息</title>
+</head>
+<body>
+	<div class="pd-header">
+		<h1>编辑行程详细信息<span></span></h1>
+		<button type="button" class="btn btn-info" data-node="confirmPlan">保存</button>
+		<button type="button" class="btn btn-default" data-node="dismissPlan" data-toggle="modal" data-target="#dismissPlanModal">取消</button>
+	</div>
+	<div class="pd-main">
+		<div class="pd-day">
+			<ul class="pd-day-sortable">
+
+			</ul>
+			<button type="button" class="btn btn-primary btn-block" data-node="addDay"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 增加一天</button>
+		</div>
+		<div class="pd-spot">
+			<h2></h2>
+			<ul class="pd-spot-sortable">
+			</ul>
+			<button type="button" class="btn btn-success btn-block" data-node="optimRoute" data-toggle="modal" data-target="#optimRouteModal"><span class="glyphicon glyphicon-road" aria-hidden="true"></span>&nbsp;&nbsp;优化路线</button>
+			<button type="button" class="btn btn-warning btn-block" data-node="eidtMemo" data-toggle="modal" data-target="#eidtMemoModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;编辑备注</button>
+		</div>
+		<div class="pd-map" id="pd-map"></div>
+	</div>
+	<div class="modal fade" id="eidtMemoModal" tabindex="-1" role="dialog" aria-labelledby="eidtMemoModalLabel">
+ 		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header bg-warning">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="eidtMemoModalLabel">编辑备注</h4>
+      			</div>
+		        <div class="modal-body">
+		            <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <textarea class="form-control"  rows="6" id="memo" data-param="memo"></textarea>
+                            </div>
+                        </div>
+                    </form>
+		        </div>
+		        <div class="modal-footer">
+                    <div class="col-sm-8">
+                        <div id="errorinfo" class="text-danger text-center"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-warning" data-node="confirm">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+		        </div>
+    		</div>
+  		</div>
+	</div>
+	<div class="modal fade" id="dismissPlanModal" tabindex="-1" role="dialog" aria-labelledby="dismissPlanModalLabel">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header bg-danger">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="dismissPlanModalLabel">取消更改</h4>
+      			</div>
+          		<div class="modal-body">
+            		您确认取消以上的更改吗？
+          		</div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-danger" data-node="confirm">确认</button>
+		            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        </div>
+    		</div>
+  		</div>
+	</div>
+	<div class="modal fade" id="deleteDayModal" tabindex="-1" role="dialog" aria-labelledby="deleteDayModalLabel">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header bg-danger">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="deleteDayModalLabel">删除</h4>
+      			</div>
+          		<div class="modal-body">
+            		您确认要删除该天吗？该天的所有记录都将被删除。
+          		</div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-danger" data-node="confirm">确认</button>
+		            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        </div>
+    		</div>
+  		</div>
+	</div>
+	<div class="modal fade" id="optimRouteModal" tabindex="-1" role="dialog" aria-labelledby="optimRouteLabel">
+ 		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header bg-success">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="optimRouteLabel">优化路线</h4>
+      			</div>
+		        <div class="modal-body">
+		            <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="planname" class="control-label col-sm-3">选择起点:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control" id="start" data-param="start"></select>
+                            </div>
+                        </div>
+                    </form>
+		        </div>
+		        <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-node="confirm">优化</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        </div>
+    		</div>
+  		</div>
+	</div>
+	<script src="assets/libs/jquery-ui/external/jquery/jquery.js"></script>
+	<script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="assets/libs/toastr/toastr.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9gGujwKanGtwDlr5a4D6OYxoQhOKrdOQ"></script>
+	<script src="assets/js/plandetail.js"></script>
+</body>
+</html>
